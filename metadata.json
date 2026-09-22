@@ -1,0 +1,6 @@
+{
+  "name": "تحدي اليوم العالمي لسلامة المرضى ٢٠٢٦م",
+  "description": "تحدي تفاعلي للممارسين الصحيين في اليوم العالمي لسلامة المرضى ٢٠٢٦م لقياس سرعة اتخاذ القرارات السريرية وتطبيق معايير إدارة سلامة المرضى.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
