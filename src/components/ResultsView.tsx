@@ -32,8 +32,6 @@ interface ResultsViewProps {
   language: Language;
   cases: MedicalCase[];
   userAnswers: boolean[];
-  onPlayAgain?: () => void;
-  onOpenCertificate?: () => void;
   onOpenLeaderboard: () => void;
 }
 

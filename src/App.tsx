@@ -4,7 +4,6 @@ import { RegistrationView } from './components/RegistrationView';
 import { GameScreen } from './components/GameScreen';
 import { ResultsView } from './components/ResultsView';
 import { LeaderboardModal } from './components/LeaderboardModal';
-import { CertificateModal } from './components/CertificateModal';
 import { MEDICAL_CASES } from './data/cases';
 import { getLeaderboard, saveLeaderboardEntry } from './data/leaderboardData';
 import { soundManager } from './utils/sound';
@@ -37,7 +36,6 @@ export default function App() {
   // Leaderboard data
   const [leaderboardEntries, setLeaderboardEntries] = useState<LeaderboardEntry[]>([]);
   const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
-  const [isCertificateOpen, setIsCertificateOpen] = useState(false);
 
   // Load leaderboard on initial render
   useEffect(() => {
@@ -139,16 +137,6 @@ export default function App() {
     setGameState('summary');
   };
 
-  const handlePlayAgain = () => {
-    setCurrentCaseIndex(0);
-    setScore(0);
-    setStreak(0);
-    setCorrectCount(0);
-    setUserAnswers([]);
-    setTotalTimeSeconds(0);
-    setGameState('playing');
-  };
-
   return (
     <div className="min-h-screen bg-[#FFFDF9] text-slate-900 flex flex-col font-sans transition-colors duration-200">
       {/* Top Navigation Bar */}
@@ -215,17 +203,6 @@ export default function App() {
         entries={leaderboardEntries}
         language={language}
         currentUserId={currentUserId}
-      />
-
-      <CertificateModal
-        isOpen={isCertificateOpen}
-        onClose={() => setIsCertificateOpen(false)}
-        staffName={staffName}
-        department={department}
-        hospital={hospital}
-        score={score}
-        accuracy={Math.round((correctCount / MEDICAL_CASES.length) * 100)}
-        language={language}
       />
 
       {/* Footer */}
